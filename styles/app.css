@@ -1,0 +1,10 @@
+.header {
+    margin-bottom: 1.8rem;
+}
+
+.header .brand-logo {
+    margin: 0 0 0 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+}
