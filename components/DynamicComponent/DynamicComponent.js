@@ -2,11 +2,13 @@ import HeroSection from '../HeroSection'
 import Feature from '../Feature'
 import Grid from '../Grid'
 import Placeholder from '../Placeholder'
+import FeaturedPosts from '../FeaturedPosts'
 
 const Components = {
     'hero-section': HeroSection,
     'grid': Grid,
-    'feature': Feature
+    'feature': Feature,
+    'featured-posts': FeaturedPosts
 }
 
 const DynamicComponent = ({blok}) => {

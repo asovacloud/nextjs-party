@@ -5,7 +5,7 @@ import StoryblokService from '../../utils/storyblok-service';
 
 const Layout = ({ children }) => {
     return (
-        <div class="wrapper">
+        <div className="wrapper">
             <div className="wrapper__holder">
                 <Head />
                 <Navigation />
