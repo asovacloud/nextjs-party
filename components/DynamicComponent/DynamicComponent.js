@@ -4,7 +4,7 @@ import Grid from '../Grid'
 import Placeholder from '../Placeholder'
 
 const Components = {
-    'teaser': HeroSection,
+    'hero-section': HeroSection,
     'grid': Grid,
     'feature': Feature
 }

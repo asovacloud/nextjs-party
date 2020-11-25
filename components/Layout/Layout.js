@@ -5,11 +5,13 @@ import StoryblokService from '../../utils/storyblok-service';
 
 const Layout = ({ children }) => {
     return (
-        <div id="wrapper">
-            <Head />
-            <Navigation />
-            <div className="container">
-                { children }
+        <div class="wrapper">
+            <div className="wrapper__holder">
+                <Head />
+                <Navigation />
+                <div className="container">
+                    { children }
+                </div>
             </div>
             <Footer />
             {StoryblokService.bridge()}
