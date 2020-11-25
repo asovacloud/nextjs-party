@@ -1,8 +1,19 @@
 import Link from "next/link";
 import { useRouter } from 'next/router';
+import { useSelector } from 'react-redux'
+
+const useLike = () => {
+    const likePosts = useSelector((state) => state.likePosts);
+    return { likePosts }
+};
 
 const Navigation = () => {
     const router = useRouter();
+    const { likePosts } = useLike();
+
+    const badgeContent = likePosts.length ? (
+        <span className="like-badge">{likePosts.length}</span>
+    ) : null;
     return (
         <nav className='indigo lighten-2 header'>
             <div className="nav-wrapper">
@@ -19,7 +30,7 @@ const Navigation = () => {
                         <Link href='/posts'><a>Posts</a></Link>
                     </li>
                     <li className={router.pathname === "/liked" ? "active" : ""}>
-                        <Link href='/liked'><a>Liked</a></Link>
+                        <Link href='/liked'><a>Liked {badgeContent}</a></Link>
                     </li>
                 </ul>
             </div>

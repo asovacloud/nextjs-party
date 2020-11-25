@@ -31,13 +31,30 @@ body > div {
 
 .header {
     margin-bottom: 1.8rem;
-}
 
-.header .brand-logo {
-    margin: 0 0 0 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.4rem;
+    .like-badge {
+        display: inline-block;
+        padding: .25em .4em;
+        font-size: 75%;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: initial;
+        color: #fff;
+        background-color: #ff3547;
+        border-radius: .125rem;
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+        position: relative;
+        top: -1px;
+    }
+
+    .brand-logo {
+        margin: 0 0 0 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.4rem;
+    }
 }
 
 .page-footer {
