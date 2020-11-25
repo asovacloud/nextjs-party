@@ -18,6 +18,9 @@ const Navigation = () => {
                     <li className={router.pathname === "/posts" ? "active" : ""}>
                         <Link href='/posts'><a>Posts</a></Link>
                     </li>
+                    <li className={router.pathname === "/liked" ? "active" : ""}>
+                        <Link href='/liked'><a>Liked</a></Link>
+                    </li>
                 </ul>
             </div>
         </nav>

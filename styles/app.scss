@@ -136,6 +136,44 @@ body > div {
     }
 
     .card-image {
+        position: relative;
+
+        &:hover {
+            .card-item-btn-wishlist {
+                opacity: 1;
+            }
+        }
+
+        .card-item-btn-wishlist {
+            position: absolute;
+            z-index: 3;
+            top: 15px;
+            right: 15px;
+            width: 30px;
+            height: 30px;
+            padding: 0;
+            border: none;
+            border-radius: 50%;
+            background-color: white;
+            color: #cfd8dc;
+            opacity: .1;
+            transition: opacity .3s ease;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .card-item-btn-wishlist:hover {
+            color: #c00;
+        }
+
+        .card-item-btn-wishlist.active {
+            color: #c00 !important;
+        }
+
+        .card:hover .card-item-btn-wishlist {
+            opacity: 1;
+        }
+
         img {
             display: block;
             height: 200px;

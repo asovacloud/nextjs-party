@@ -2,7 +2,6 @@ import React from 'react'
 import SbEditable from 'storyblok-react'
 
 const HeroSection = ({blok}) => {
-    console.log('111: ',blok);
     return (
         <SbEditable content={blok}>
             <div className="hero-section white-text">
