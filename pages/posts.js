@@ -14,7 +14,7 @@ export default class extends React.Component {
     static async getInitialProps({ query }) {
         StoryblokService.setQuery(query)
 
-        let res = await StoryblokService.get('cdn/stories/home', {
+        let res = await StoryblokService.get('cdn/stories/post', {
             "resolve_relations": "featured-posts.posts"
         })
 

@@ -3,7 +3,7 @@ import SbEditable from 'storyblok-react'
 
 const Grid = ({blok}) => (
     <SbEditable content={blok}>
-        <ul className="flex">
+        <ul className="feature-list">
             {blok.columns.map((nestedBlok) => (
                     <li key={nestedBlok._uid}>
                         <DynamicComponent blok={nestedBlok} />

@@ -5,18 +5,31 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "axios": "^0.21.0",
     "materialize-css": "^1.0.0",
     "next": "10.0.2",
+    "node-sass": "^5.0.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
     "storyblok-js-client": "^3.1.1",
-    "storyblok-react": "^0.1.1"
+    "storyblok-react": "^0.1.1",
+    "storyblok-rich-text-react-renderer": "^2.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@storybook/addon-actions": "^6.1.6",
+    "@storybook/addon-essentials": "^6.1.6",
+    "@storybook/addon-links": "^6.1.6",
+    "@storybook/react": "^6.1.6",
+    "babel-loader": "^8.2.1",
     "postcss-preset-env": "^6.7.0"
   }
 }

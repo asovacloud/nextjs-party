@@ -1,3 +1,3 @@
-import Teaser from './Teaser';
+import HeroSection from './HeroSection';
 
-export default Teaser;
+export default HeroSection;
