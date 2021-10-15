@@ -1,6 +1,8 @@
 import Link from "next/link";
+
 import Layout from "../components/Layout";
 import ModalBox from "../components/ModalBox";
+import Todos from "../components/Todos";
 
 const IndexPage = () => (
   <Layout title="Home | Next.js + TypeScript Example Start">
@@ -12,6 +14,7 @@ const IndexPage = () => (
         </Link>
       </p>
       <ModalBox />
+      <Todos />
     </div>
   </Layout>
 );

@@ -9,7 +9,9 @@ function ModalBox() {
   return (
     <>
       <Modal ref={modalEl} onClose={onCloseModal} />
-      <button onClick={onShowModal}>Open Modal Box</button>
+      <button onClick={onShowModal} className="btn btn-secondary">
+        Open Modal Box
+      </button>
     </>
   );
 }
