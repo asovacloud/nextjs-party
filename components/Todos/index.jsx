@@ -70,7 +70,6 @@ function createData(data) {
 }
 
 function renderData(data) {
-  console.time("RENDER DATA");
   // const newData = useMemo(() => createData(data), [data]);
 
   // console.log("NEW DATA: ", newData);
@@ -78,7 +77,6 @@ function renderData(data) {
   // const result = newData(data);
 
   console.log("NEW DATA: ", data);
-  console.timeEnd("RENDER DATA");
   return data.map((organization, idx) => {
     return (
       <div key={idx}>
@@ -92,16 +90,16 @@ function renderData(data) {
 function Todos() {
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    setData();
-  }, []);
-
   const onHandleChecked = (id) => {
     const index = data.findIndex((i) => i.id === id);
     let copyData = [...data];
     copyData[index].completed = !data[index].completed;
     setData(copyData);
   };
+
+  const resetState = () => {
+    setData([]);
+  }
 
   // const memoizedCallback =
   // useCallback();
@@ -111,10 +109,11 @@ function Todos() {
   // },
   // [5]
 
-  const newData = useMemo(() => createData(data), [data]);
-  // console.log("new DATA: ", newData());
-  // const result = newData(data);
+  console.time("RENDER DATA");
 
+  const newData = useMemo(() => createData(data), [data]);
+
+  console.timeEnd("RENDER DATA");
   return (
     <div className="todos">
       <div className="list-group mt-3 mb-5">
@@ -141,6 +140,9 @@ function Todos() {
           Get Data
         </button>
         {data && data.length && renderData(newData)}
+        <button onClick={resetState}>
+          Reset Data
+        </button>
       </div>
       <style jsx>{`
         .list-group-item {
