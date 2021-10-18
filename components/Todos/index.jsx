@@ -55,23 +55,31 @@ function countUsers(organization) {
 }
 
 function createData(data) {
-  return data.map((organization) => {
-    const counter = countUsers(organization);
-    return { counter, name: organization.name };
-  });
+  console.log(
+    "++++++++CREATE DATA!!!!!!",
+    data,
+    "---",
+    data && data.length !== 0
+  );
+  return data && data.length !== 0
+    ? data.map((organization) => {
+        const counter = countUsers(organization);
+        return { counter, name: organization.name };
+      })
+    : [];
 }
 
 function renderData(data) {
-  if (!data) return;
   console.time("RENDER DATA");
-  const newData = useMemo(() => {
-    return createData(data);
-  }, [data]);
+  // const newData = useMemo(() => createData(data), [data]);
 
-  console.log("NEW DATA: ", newData);
+  // console.log("NEW DATA: ", newData);
+  // const result = data();
+  // const result = newData(data);
 
+  console.log("NEW DATA: ", data);
   console.timeEnd("RENDER DATA");
-  return newData.map((organization, idx) => {
+  return data.map((organization, idx) => {
     return (
       <div key={idx}>
         <span>{organization.name}</span> ----
@@ -103,13 +111,18 @@ function Todos() {
   // },
   // [5]
 
+  const newData = useMemo(() => createData(data), [data]);
+  // console.log("new DATA: ", newData());
+  // const result = newData(data);
+
   return (
     <div className="todos">
       <div className="list-group mt-3 mb-5">
         {console.log("Data: ", data)}
 
         <button
-          className="btn"
+          className="btn btn-primary"
+          type="button"
           onClick={async () => {
             console.log("Was clicked!!!!");
             let timer;
@@ -127,7 +140,7 @@ function Todos() {
         >
           Get Data
         </button>
-        {data && renderData(data)}
+        {data && data.length && renderData(newData)}
       </div>
       <style jsx>{`
         .list-group-item {
